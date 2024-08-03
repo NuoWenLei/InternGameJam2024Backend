@@ -3,6 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+game_env
+*env
+*.env
+*__pycache__
+
 # C extensions
 *.so
 

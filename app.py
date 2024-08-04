@@ -16,9 +16,10 @@ client = OpenAI(
 app = FastAPI()
 
 @app.get("/generateCharacterActions")
-def generateActions(description: str):
+def generateActions(description: str, customContext: str):
 
-  prompt = f"""{characterPrompt}{description}
+  prompt = f"""{systemPrompt} {customContext}
+{characterPrompt}{description}
 
 List of actions:
 """

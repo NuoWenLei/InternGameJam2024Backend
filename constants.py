@@ -28,10 +28,9 @@ for k in mapping:
 
 formattedMapping += "}"
 
-systemPrompt = f"You are an interpreter for a video game character's actions. Your task is to convert the user's description of movements and actions into a list of actions based on the provided mapping. Only respond with the characters defined in the mapping and limit the response to a maximum of {maximumMovements} characters."
+systemPrompt = f"You are an interpreter for a video game character's actions. Your task is to convert the user's description of movements and actions into a list of actions to be performed on a grid based on the provided mapping. Only respond with the characters defined in the mapping and limit the response to a maximum of {maximumMovements} characters."
 
-characterPrompt = f"""{systemPrompt}
-
+characterPrompt = f"""
 Mapping:
 {formattedMapping}
 

@@ -1,4 +1,4 @@
-maximumMovements = 10
+maximumMovements = 40
 
 mapping = {
 	"Up": "U",

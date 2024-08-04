@@ -36,7 +36,7 @@ List of actions:
   msg = completion.choices[0].message
   print(msg)
   mappedActions = mapping.values()
-  filteredCharacters = [reverseMapping[c] for c in msg.content if c in mappedActions]
+  filteredCharacters = [reverseMapping[c] for c in msg.content.upper() if c in mappedActions]
   return filteredCharacters[:maximumMovements]
     
     

@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from typing import Union
 from fastapi import FastAPI
 from openai import OpenAI
+from fastapi.middleware.cors import CORSMiddleware
 
 from constants import characterPrompt, systemPrompt, mapping, reverseMapping, maximumMovements
 
@@ -13,7 +14,19 @@ client = OpenAI(
   api_key=os.environ.get("OPENAI_API_KEY"),
 )
 
+origins = [
+    "*"
+]
+
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/generateCharacterActions")
 def generateActions(description: str, customContext: str):

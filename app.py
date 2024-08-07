@@ -15,7 +15,7 @@ client = OpenAI(
 )
 
 origins = [
-    "https://realcolossal.itch.io"
+    "https://html-classic.itch.zone"
 ]
 
 app = FastAPI()
